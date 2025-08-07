@@ -7,9 +7,9 @@ class dbClient {
     this.connectDB();
   }
   async connectDB() {
-    const queryString = `mongodb+srv://${process.env.USER_DB}:${process.env.PASS_DB}@${process.env.SERVER_DB}/?retryWrites=true&w=majority&appName=NodeApp";`
+    const queryString = `mongodb+srv://${process.env.USER_DB}:${process.env.PASS_DB}@${process.env.SERVER_DB}/app?retryWrites=true&w=majority`
     await mongoose.connect(queryString);
-    this.conectarDB();
+    console.log("Conectado a la base de datos");
   }
 
   async closeDB() {
@@ -21,7 +21,7 @@ class dbClient {
     }
 
   }
-  
+
 }
 
 export default new dbClient();

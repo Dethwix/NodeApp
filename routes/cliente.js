@@ -1,6 +1,6 @@
 import express from 'express';
 const route = express.Router();
-import clienteController from '../controllers/clientes.js';
+import clienteController from '../controllers/cliente.js';
 
 route.post('/', clienteController.create);
 route.get('/', clienteController.getAll);

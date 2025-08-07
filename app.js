@@ -1,13 +1,14 @@
 import 'dotenv/config';
 import express from 'express';
-import routesCliente from './routes/clientes.js';
+import routesCliente from './routes/cliente.js';
 import bodyParser from 'body-parser';
+import dbClient from './config/dbClient.js';
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/clientes', routesCliente)
+app.use('/cliente', routesCliente)
 
 try {
   const PORT = process.env.PORT || 3000;
@@ -16,3 +17,8 @@ try {
   console.log(e);
 
 }
+
+process.on('SIGINT', async () => {
+  dbClient.closeDB();
+  process.exit(0);
+})
