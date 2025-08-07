@@ -18,7 +18,7 @@ const clienteSchema = new mongoose.Schema(
     estado: {
       type: String,
       enum: ['Pendiente', 'Pagado'],
-      default: 'Pagado'
+      default: 'Pendiente'
     },
     historialPagos: [{
       type: Schema.Types.ObjectId,
