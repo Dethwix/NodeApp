@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const clienteSchema = new mongoose.Schema(
+const clientSchema = new mongoose.Schema(
   {
     nombre: {
       type: String,
@@ -31,4 +31,4 @@ const clienteSchema = new mongoose.Schema(
   }, { timestamps: true }
 );
 
-export default mongoose.model('cliente', clienteSchema);
+export default mongoose.model('client', clientSchema);
